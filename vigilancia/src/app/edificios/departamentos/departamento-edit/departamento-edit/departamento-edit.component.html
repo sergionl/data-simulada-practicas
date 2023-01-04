@@ -1,0 +1,33 @@
+<div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Añade un trabajador</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form [formGroup] = "myForm" >
+      <div class="card-body">
+        <div class="form-group">
+          <label for="inputName">Nombres</label>
+          <input class="form-control" id="inputName" value="{{editTrabajador.nombres}}" formControlName="nombres">
+        </div>
+        <div class="form-group">
+          <label for="inputFecha">Apellidos</label>
+          <input  class="form-control" id="inputFecha" value="{{editTrabajador.apellidos}}" formControlName="apellidos">
+        </div>
+        <div class="form-group">
+          <label for="inputFecha">Posición</label>
+          <input  class="form-control" id="inputFecha" value="{{editTrabajador.posicion}}" formControlName="posicion">
+        </div>
+        
+        
+      </div>
+      <!-- /.card-body -->
+
+      <div class="card-footer">
+        <button routerLink="/dashboard/trabajador" type="submit" class="btn btn-primary">Cancelar</button>
+        
+        <button (click)="editar()" routerLink="/dashboard/trabajador" type="submit" class="btn btn-primary">Aceptar</button>
+      </div>
+    </form>
+  </div>
+  <!-- /.card -->

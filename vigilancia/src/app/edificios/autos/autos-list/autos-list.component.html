@@ -1,0 +1,67 @@
+<section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Tareas</h1>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  
+  
+  
+  <ul class="datasets">
+  </ul>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+            
+            <a href="dashboard/addTarea" class="btn btn-app">
+              <i class="fas fa-plus"></i> Add
+            </a>
+          </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0" style="height: 300px;">
+          <table class="table table-head-fixed text-nowrap">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>titulo</th>
+                <th>descripcion</th>
+                <th>fecha_entrega</th>
+                
+                
+              </tr>
+            </thead>
+            <tbody *ngFor="let data of tareas; index as i">
+              <tr>
+                <td>{{i+1}}</td>
+                <td>{{data.titulo}}</td>
+                <td>{{data.descripcion}}</td>
+                <td>{{data.fecha_entrega}}</td>
+                
+               
+                <td>
+                  <a (click)="edit(data.id)" class="btn btn-app" routerLink="/dashboard/editTarea/{{data.id}}">
+                    Editar
+                  </a>
+                  <a (click)="deleteFromArray(data.id)" class="btn btn-app" >
+                    Eliminar
+                  </a>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+  </div>
+  <!-- /.row -->
